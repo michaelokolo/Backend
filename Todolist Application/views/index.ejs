@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+
+
+<div class="container">
+ <h1>Today's Task</h1>   
+<div class="date">Sunday, August 2023</div>
+<%for(let i = 0; i < locals.tasks?.length; i++){%>
+    <li><input type="checkbox" name="check" value="<%= locals.tasks[i] %>" /> <%= locals.tasks[i] %></li>
+<%}%>
+<div class="form">
+    <form action="/" method="POST">
+        <input type="text" class="task-input" name="newitem" placeholder="Add New Task" required>
+        <input class="btn" type="submit" value="+">
+    </form>
+</div>
+</div>
