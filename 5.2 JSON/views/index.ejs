@@ -17,9 +17,12 @@
   <div id="recipeContainer" class="hidden">
 
     <!-- If no recipe yet, show: -->
-    <%if(!recipe){%>
+    <%if(!locals.recipe){%>
       <h2>Pick your favourite taco ingredient 👆</h2>
     <%}else{%>
+      <h2 id="recipeTitle">
+        <%= recipe.name %>
+      </h2>
       <h3>Ingredients:</h3>
       <ul id="ingredientsList">
         <li><%= recipe.ingredients.protein.name %>, <%=recipe.ingredients.protein.preparation%></li>
